@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --color-ink: #14213d;
+  --color-muted: #4b556f;
+  --color-bg: #f7f3ea;
+  --color-panel: rgba(255, 255, 255, 0.84);
+  --color-border: rgba(20, 33, 61, 0.14);
+  --color-primary: #126782;
+  --color-primary-strong: #0b4d63;
+  --color-accent: #f4a261;
+  --shadow-soft: 0 10px 35px rgba(18, 103, 130, 0.12);
+  --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  background:
+    radial-gradient(circle at 8% -5%, rgba(244, 162, 97, 0.32), transparent 36%),
+    radial-gradient(circle at 92% 0%, rgba(18, 103, 130, 0.24), transparent 34%),
+    linear-gradient(180deg, #fffaf1 0%, var(--color-bg) 56%, #f1ece0 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.site-shell {
+  width: min(1120px, 92vw);
+  margin: 1.8rem auto;
+  border: 1px solid var(--color-border);
+  border-radius: 1.35rem;
+  overflow: hidden;
+  background: var(--color-panel);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-soft);
+}
+
+.site-main {
+  padding: 1.3rem clamp(1rem, 4vw, 3rem) 3rem;
+}
+
+.reveal {
+  opacity: 0;
+  animation: reveal-up 620ms ease forwards;
+}
+
+.reveal.delay-1 {
+  animation-delay: 120ms;
+}
+
+.reveal.delay-2 {
+  animation-delay: 220ms;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .site-shell {
+    width: min(98vw, 1120px);
+    margin: 0.75rem auto;
+    border-radius: 1rem;
+  }
+
+  .site-main {
+    padding: 1.1rem 1rem 2.2rem;
+  }
+}

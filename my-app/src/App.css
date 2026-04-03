@@ -1,0 +1,17 @@
+.page-section {
+  margin-bottom: 4rem;
+}
+
+.section-heading {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--color-ink);
+  letter-spacing: 0.02em;
+}
+
+.section-lead {
+  max-width: 68ch;
+  margin: 0 0 1.5rem;
+  color: var(--color-muted);
+}
